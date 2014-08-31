@@ -8,8 +8,8 @@
             },
             run: function () {
                 var self = this;
-                var placePromise = Places.getAllPlaces();
-                var neighbourhood = Places.getAllNeighbourhoods();
+                Places.FetchAllPlaces(deferred);
+
                 $ionicPlatform.ready(function () {
                     self.setUpIonic();
 

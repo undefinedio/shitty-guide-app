@@ -2,7 +2,7 @@
     angular.module('app').config(function ($stateProvider, $urlRouterProvider) {
 
         //default url
-        $urlRouterProvider.otherwise("/tab/list");
+        $urlRouterProvider.otherwise("/tab/map");
 
         //setup abstract tab route
         $stateProvider
