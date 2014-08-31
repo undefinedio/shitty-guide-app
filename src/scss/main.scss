@@ -1,0 +1,34 @@
+// Sass utilities
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+@import "helpers/helpers";
+
+// Base stuff
+@import "base/reset";
+
+// Vendors and external stylesheets
+@import "vendors/ionic.app";
+@import "base/typography";
+ 
+// Layout related stylesheets
+@import "layout/grid";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/forms";
+ 
+// Components and modules
+@import "components/buttons";
+
+// Page-specific stylesheets
+@import "pages/home";
+
+// Include css
+@import "../bower/leaflet/dist/leaflet.css";
+
+//HACKY
+
+.map{
+  width: 100%;
+  height: 100%;
+}
