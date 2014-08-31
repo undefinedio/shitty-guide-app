@@ -4,7 +4,15 @@
 
         var self = service;
 
+
+
         service._places = [];
+
+
+        service._maxBounds = {
+            'northEast' : undefined, // highest
+            'southWest' : undefined
+        };
 
 
         service._neighbourhoods = [];
@@ -30,6 +38,7 @@
                             slug: post.slug,
                             title: post.title,
                             content: post.content,
+                            location: (Array.isArray(post.custom_fields.location) ?  post.custom_fields.location[0] : post.custom_fields.location),
                             lat: parseFloat(post.custom_fields.lat),
                             lng: parseFloat(post.custom_fields.lng),
                             neighbourhood_id: parseInt(post.taxonomy_neighbourhood[0].id)
@@ -40,6 +49,31 @@
                         var neighbourhood = _.find(self._neighbourhoods, { 'id' : post.neighbourhood_id});
                         if(!neighbourhood.places) neighbourhood.places = [];
                         neighbourhood.places.push(post);
+
+                        if(!self._maxBounds.northEast){
+                            self._maxBounds.northEast = {};
+                            self._maxBounds.northEast.lat = post.lat;
+                            self._maxBounds.northEast.lng = post.lng;
+                        }else{
+                            if(post.lat > self._maxBounds.northEast.lat) self._maxBounds.northEast.lat = post.lat;
+                            if(post.lng > self._maxBounds.northEast.lng) self._maxBounds.northEast.lng = post.lng;
+                        }
+
+                        if(!self._maxBounds.southWest){
+                            self._maxBounds.southWest = {};
+                            self._maxBounds.southWest.lat = post.lat;
+                            self._maxBounds.southWest.lng = post.lng;
+                        }else{
+                            if(post.lat < self._maxBounds.southWest.lat) self._maxBounds.southWest.lat = post.lat;
+                            if(post.lng < self._maxBounds.southWest.lng) self._maxBounds.southWest.lng = post.lng;
+                        }
+
+                        self._maxBounds.northEast.lat += 0.0005;
+                        self._maxBounds.northEast.lng += 0.0005;
+
+                        self._maxBounds.southWest.lat -= 0.0005;
+                        self._maxBounds.southWest.lng -= 0.0005;
+
                     });
                     return posts;
                 }
@@ -64,6 +98,10 @@
 
         service.findPlace = function (placeId) {
             return _.find(self._places, { 'id': placeId});
+        };
+
+        service.getMaxBounds = function(){
+            return self._maxBounds;
         };
 
         return service;
