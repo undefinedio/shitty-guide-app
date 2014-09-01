@@ -4,6 +4,7 @@
         'templates',
         'app.list',
         'app.places',
+        'app.guide',
         'app.map'
     ];
     angular.module('app', dependencies);

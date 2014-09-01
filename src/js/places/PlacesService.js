@@ -16,6 +16,7 @@
 
 
         service._neighbourhoods = [];
+        service._types = [];
 
 
         service.FetchAllPlaces = function (deferred) {
@@ -33,6 +34,8 @@
                     data = JSON.parse(data);
                     var posts = data.posts.map(function (post) {
                         self._neighbourhoods.push(post.taxonomy_neighbourhood[0]);
+                        if(post['taxonomy_shitty-type'][0]) self._types.push(post['taxonomy_shitty-type'][0]);
+                        console.log(post);
                         return {
                             id: parseInt(post.id),
                             slug: post.slug,
@@ -41,15 +44,16 @@
                             location: (Array.isArray(post.custom_fields.location) ?  post.custom_fields.location[0] : post.custom_fields.location),
                             lat: parseFloat(post.custom_fields.lat),
                             lng: parseFloat(post.custom_fields.lng),
-                            neighbourhood_id: parseInt(post.taxonomy_neighbourhood[0].id)
+                            neighbourhood_id: parseInt(post.taxonomy_neighbourhood[0].id),
+                            type_id: (post['taxonomy_shitty-type'][0] ? parseInt(post['taxonomy_shitty-type'][0].id) : undefined)
                         }
                     });
                     self._neighbourhoods = _.uniq(self._neighbourhoods, function(n){return n.id});
+                    self._types = _.uniq(self._types, function(n){return n.id});
                     posts.forEach(function(post){
                         var neighbourhood = _.find(self._neighbourhoods, { 'id' : post.neighbourhood_id});
                         if(!neighbourhood.places) neighbourhood.places = [];
                         neighbourhood.places.push(post);
-
                         if(!self._maxBounds.northEast){
                             self._maxBounds.northEast = {};
                             self._maxBounds.northEast.lat = post.lat;
@@ -90,6 +94,10 @@
 
         service.getPlaces = function () {
             return self._places;
+        };
+
+        service.getTypes = function () {
+            return self._types;
         };
 
         service.getNeighborhoods = function () {

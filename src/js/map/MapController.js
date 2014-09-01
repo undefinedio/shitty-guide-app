@@ -1,11 +1,21 @@
 (function () {
     'use strict';
-    angular.module('app.map').controller('MapController', function ($scope, $ionicModal ,  leafletData, Places) {
+    angular.module('app.map').controller('MapController', function ($scope, $ionicModal ,  leafletData, Places, $ionicSideMenuDelegate) {
+
+        $scope.toggleLeft = function() {
+            $ionicSideMenuDelegate.toggleLeft();
+        };
 
         $scope.defaults = {
-            tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-            minZoom: 11
+            tileLayer: 'img/tiles/{z}/{x}/{y}.jpg',
+            tileLayerOptions: {
+                //maxNativeZoom : 14
+            },
+            //tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
+            minZoom: 11,
+            maxZoom: 16
         };
+
 
         $ionicModal.fromTemplateUrl('detail/template.html', {
             scope: $scope,
@@ -16,9 +26,11 @@
 
         var places = Places.getPlaces();
 
+        $scope.types = Places.getTypes();
+
         $scope.center = {
-            lat: 1,
-            lng: 1,
+            lat: 51.212664,
+            lng: 4.406837,
             zoom: 11
         };
 
@@ -37,7 +49,9 @@
         });
 
         $scope.$on('leafletDirectiveMarker.click', function (e, args) {
+
             $scope.place = Places.findPlace(parseInt(args.markerName));
+            console.log($scope.place);
             $scope.modal.show();
         });
 

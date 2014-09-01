@@ -1,8 +1,37 @@
 <ion-view title="Map">
     <ion-nav-bar class="bar-stable nav-title-slide-ios7">
-        <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back"></ion-nav-back-button>
+        <ion-nav-buttons side="left">
+            <button class="button button-icon" ng-click="toggleLeft()">
+                <i class="icon ion-navicon"></i>
+            </button>
+        </ion-nav-buttons>
     </ion-nav-bar>
-    <ion-content has-header="true" padding="false" data-tap-disabled="true" scroll="false">
-        <leaflet maxbounds="maxBounds" defaults="defaults" center="center" class="map" height="100%" width="100%"  markers="markers"></leaflet>
-    </ion-content>
+    <ion-side-menus>
+        <!-- Center content -->
+        <ion-side-menu-content>
+            <ion-content has-header="true" padding="false" data-tap-disabled="true" scroll="false">
+                <leaflet maxbounds="maxBounds" defaults="defaults" center="center" class="map" height="100%"
+                         width="100%" markers="markers"></leaflet>
+            </ion-content>
+        </ion-side-menu-content>
+
+        <!-- Left menu -->
+        <ion-side-menu side="left">
+            <header class="bar bar-header bar-dark">
+                <div class="title">Filter</div>
+            </header>
+            <ion-content has-header="true">
+                <ul class="list">
+                    <li  data-click-menulink class="item item-icon-left">
+                        <i class="icon ion-ios7-ionic-outline"></i>
+                        All
+                    </li>
+                    <li ng-repeat="type in types" data-click-menulink class="item item-icon-left">
+                        <i class="icon ion-ios7-ionic-outline"></i>
+                        {{type.title}}
+                    </li>
+                </ul>
+            </ion-content>
+        </ion-side-menu>
+    </ion-side-menus>
 </ion-view>
