@@ -37,18 +37,18 @@ gulp.task('default', function () {
 function concatBower() {
     console.log('Concat bower javascript');
     gulp.src([
-            'src/bower/jquery/dist/jquery.js',
-            'src/bower/lodash/dist/lodash.js',
-            'src/bower/angular/angular.js',
-            'src/bower/ngCordova/dist/ng-cordova.js',
-            'src/bower/angular-animate/angular-animate.js',
-            'src/bower/angular-sanitize/angular-sanitize.js',
-            'src/bower/angular-ui-router/release/angular-ui-router.js',
-            'src/bower/ionic/js/ionic.js',
-            'src/bower/ionic/js/ionic-angular.js',
-            'src/bower/leaflet/dist/leaflet.js',
-            'src/bower/angular-leaflet-directive/dist/angular-leaflet-directive.js'
-        ])
+        'src/bower/jquery/dist/jquery.js',
+        'src/bower/lodash/dist/lodash.js',
+        'src/bower/angular/angular.js',
+        'src/bower/ngCordova/dist/ng-cordova.js',
+        'src/bower/angular-animate/angular-animate.js',
+        'src/bower/angular-sanitize/angular-sanitize.js',
+        'src/bower/angular-ui-router/release/angular-ui-router.js',
+        'src/bower/ionic/js/ionic.js',
+        'src/bower/ionic/js/ionic-angular.js',
+        'src/bower/leaflet/dist/leaflet.js',
+        'src/bower/angular-leaflet-directive/dist/angular-leaflet-directive.js'
+    ])
         .pipe(sourcemaps.init())
         .pipe(concat('thirdparty.js'))
         .pipe(ngAnnotate())
@@ -60,10 +60,10 @@ function concatBower() {
 function concatJS() {
     console.log('Concat javascript');
     gulp.src([
-            'src/js/**/module.js',
-            'src/js/**/*.js',
-            '!src/js/bootstrap.js'
-        ])
+        'src/js/**/module.js',
+        'src/js/**/*.js',
+        '!src/js/bootstrap.js'
+    ])
         .pipe(plumber())
         .pipe(sourcemaps.init())
         .pipe(concat('main.js'))
@@ -73,8 +73,8 @@ function concatJS() {
         .pipe(gulp.dest('www/js/'));
 
     gulp.src([
-            'src/js/bootstrap.js'
-        ])
+        'src/js/bootstrap.js'
+    ])
         .pipe(plumber())
         .pipe(concat('bootstrap.js'))
         .pipe(gulp.dest('www/js/'))
@@ -87,8 +87,8 @@ function compileSass() {
     console.log("Compile sass");
     gulp.src('./src/scss/main.scss')
         .pipe(plumber())
-        .pipe(sass())
-        .pipe( cssimport() )
+        .pipe(sass({sourceComments: 'map'}))
+        .pipe(cssimport())
         .pipe(gulp.dest('./www/css/'))
         .pipe(minifyCss({
             keepSpecialComments: 0

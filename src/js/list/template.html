@@ -1,4 +1,4 @@
-<ion-view title="Places">
+<ion-view title="{{title}}">
     <ion-nav-bar class="bar-stable nav-title-slide-ios7">
         <ion-nav-back-button class="button-icon icon  ion-ios7-arrow-back"></ion-nav-back-button>
     </ion-nav-bar>
@@ -12,6 +12,7 @@
                 <div class="item item-divider" ng-bind-html="neighborhood.title"></div>
                 <ion-item ng-repeat="place in neighborhood.places"
                           ng-click="openPlace(place)">
+
                     <h2 ng-bind-html="place.title"></h2>
                 </ion-item>
             </div>

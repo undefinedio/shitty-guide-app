@@ -1,6 +1,7 @@
 (function () {
     'use strict';
     angular.module('app.map').controller('MapController', function ($scope, $ionicModal ,  leafletData, Places, $ionicSideMenuDelegate) {
+        $scope.title = '<i class="icon-winks-left"></i>Map<i class="icon-winks-right"></i>'
 
         $scope.toggleLeft = function() {
             $ionicSideMenuDelegate.toggleLeft();

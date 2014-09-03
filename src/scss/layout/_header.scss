@@ -1,28 +1,23 @@
 .bar.bar-stable {
-    background: white url('../img/header.png') repeat right top;
+  background: white url('../img/header.png') repeat right top;
 }
 
 .bar .title {
 
-    &:before {
-        display: block;
-        content: '';
-        background: white url('../img/antwerp-winks.png') no-repeat top left;
-        position: absolute;
-        top: 7px;
-        left: 44%;
-        height: 22px;
-        width: 8px;
+  i {
+    display: inline-block;
+    position: relative;
+    height: 22px;
+    width: 8px;
+    &.icon-winks-left {
+      background: white url('../img/antwerp-winks-left.png') no-repeat top left;
+      top: 5px;
+      right: 5px;
     }
-
-    &:after {
-        display: block;
-        content: '';
-        background: white url('../img/antwerp-winks-2.png') no-repeat top left;
-        position: absolute;
-        top: 11px;
-        right: 44%;
-        height: 22px;
-        width: 8px;
+    &.icon-winks-right {
+      background: white url('../img/antwerp-winks-right.png') no-repeat top left;
+      top: 7px;
+      left: 5px;
     }
+  }
 }

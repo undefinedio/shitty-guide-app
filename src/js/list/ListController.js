@@ -1,6 +1,9 @@
 (function () {
     'use strict';
     angular.module('app.list').controller('ListController', function ($scope, $ionicModal, Places) {
+        $scope.title = '<i class="icon-winks-left"></i>Places<i class="icon-winks-right"></i>'
+
+
         $scope.neighborhoods = Places.getNeighborhoods();
         $ionicModal.fromTemplateUrl('detail/template.html', {
             scope: $scope,
