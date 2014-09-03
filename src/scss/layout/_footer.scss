@@ -5,20 +5,30 @@
     border-top: none !important;
 }
 
-.icon-maps {
-    background: white url('../img/icon-maps.png') repeat left top;
-    height: 25px;
-    width: 18px;
-}
+.tabs .tab-item {
+    .icon-maps {
+        background: white url('../img/icon-map.png') repeat left top;
+        height: 48px;
+        width: 48px;
+        background-size: contain;
+    }
 
-.icon-places {
-    background: white url('../img/icon-places.png') repeat left top;
-    width: 52px;
-    height: 25px;
-}
+    .icon-places {
+        background: white url('../img/icon-places.png') repeat left top;
+        width: 48px;
+        height: 48px;
+        background-size: contain;
+    }
 
-.icon-guide {
-    background: white url('../img/icon-guide.png') repeat left top;
-    width: 45px;
-    height: 23px;
+    .icon-guide {
+        background: white url('../img/icon-guide.png') repeat left top;
+        width: 48px;
+        height: 48px;
+        background-size: contain;
+    }
+
+    .tab-title {
+        font-family: 'mostlymonomedium';
+        text-transform: uppercase;
+    }
 }
