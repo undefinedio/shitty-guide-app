@@ -9,10 +9,9 @@
         </ion-refresher>
         <ion-list>
             <div ng-repeat="neighborhood in neighborhoods">
-                <div class="item item-divider" ng-bind-html="neighborhood.title"></div>
+                <div class="item item-divider item-avatar" ng-bind-html="neighborhood.title"></div>
                 <ion-item ng-repeat="place in neighborhood.places"
                           ng-click="openPlace(place)">
-                    <i class="type-icon-{{place.type_id}}"></i>
                     <h2 ng-bind-html="place.title"></h2>
                 </ion-item>
             </div>
