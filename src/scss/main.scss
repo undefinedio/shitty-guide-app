@@ -9,14 +9,15 @@
 
 // Vendors and external stylesheets
 @import "vendors/ionic.app";
+@import "helpers/animation";
 @import "base/typography";
- 
+
 // Layout related stylesheets
 @import "layout/grid";
 @import "layout/header";
 @import "layout/footer";
 @import "layout/forms";
- 
+
 // Components and modules
 @import "components/buttons";
 

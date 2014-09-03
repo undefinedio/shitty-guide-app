@@ -5,9 +5,10 @@
 
 
         $scope.neighborhoods = Places.getNeighborhoods();
+
         $ionicModal.fromTemplateUrl('detail/template.html', {
             scope: $scope,
-            animation: 'slide-in-up'
+            animation: 'skew'
         }).then(function (modal) {
             $scope.modal = modal;
         });
