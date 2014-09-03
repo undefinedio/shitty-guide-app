@@ -39,7 +39,8 @@
                         return {
                             id: parseInt(post.id),
                             slug: post.slug,
-                            title: '<i class="icon-winks-left"></i>' + post.title + '<i class="icon-winks-right"></i>',
+                            modalTitle: '<i class="icon-winks-left"></i>' + post.title + '<i class="icon-winks-right"></i>',
+                            title: post.title,
                             content: post.content,
                             location: (Array.isArray(post.custom_fields.location) ?  post.custom_fields.location[0] : post.custom_fields.location),
                             lat: parseFloat(post.custom_fields.lat),
