@@ -1,6 +1,39 @@
 .type-icon- {
-    background: white url('../img/icon-guide.png') repeat left top;
-    width: 48px;
-    height: 48px;
-    background-size: contain;
+  background: white url('../img/icon-guide.png') repeat left top;
+  width: 48px;
+  height: 48px;
+  background-size: contain;
+}
+
+.stripe-download, .twitter, .facebook, .arrow-download, .arrow-cara, .line-through, .m-stripe-nav {
+  background: url(../img/sprites/sprites.png) no-repeat;
+}
+
+.arrow-cara {
+  background-position: -13px -15px;
+  width: 37px;
+  height: 35px;
+  display: inline-block;
+}
+
+.facebook {
+  background-position: -138px 0;
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.twitter {
+  background-position: -137px -33px;
+  width: 28px;
+  height: 26px;
+  display: inline-block;
+}
+
+.stripe-download {
+  background-position: 0 0;
+  width: 123px;
+  height: 8px;
+  margin: 0 auto;
 }
