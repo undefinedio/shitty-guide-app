@@ -20,7 +20,7 @@
 
         $ionicModal.fromTemplateUrl('detail/template.html', {
             scope: $scope,
-            animation: 'slide-in-up'
+            animation: 'rotate3D'
         }).then(function(modal) {
             $scope.modal = modal;
         });
