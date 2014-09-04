@@ -5,11 +5,18 @@
 
     </ion-header-bar>
     <ion-content>
-        <div class="card">
-            <div class="item item-text-wrap" ng-bind-html="place.content"></div>
+        <div class="item item-avatar">
+            <img src="img/icons/type-{{place.type_id}}.png" alt=""/>
+
+            <h2 ng-bind-html="place.title"></h2>
         </div>
-        <div class="card" ng-show="place.location">
-            <div class="item item-text-wrap" ng-bind-html="place.location"></div>
+        <div class="card">
+            <div class="item-location">
+                <img src="img/icons/icon-map.png" alt=""/>
+                {{place.location}}
+            </div>
+            <img src="{{place.pic}}" alt=""/>
+            <div class="item item-text-wrap" ng-bind-html="place.content"></div>
         </div>
     </ion-content>
 </ion-modal-view>

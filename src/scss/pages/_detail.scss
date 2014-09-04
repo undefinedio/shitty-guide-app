@@ -1,0 +1,51 @@
+.modal-wrapper {
+
+    .card {
+        box-shadow: none;
+        margin-top: 0px;
+    }
+
+    .item {
+        border: none;
+        padding: 0;
+    }
+
+    .item-avatar {
+        border: none;
+        min-height: initial;
+        height: 36px;
+        margin-top: 10px;
+
+        img {
+            top: 0;
+            left: 10px;
+            max-width: 32px;
+            max-height: 32px;
+        }
+    }
+
+    .item-location {
+        font-size: 14px;
+        padding-bottom: 5px;
+        color: #666666;
+        margin: 10px 0;
+
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            width: 24px;
+        }
+    }
+
+    h2 {
+        top: 50%;
+        position: absolute;
+        transform: translateY(-50%);
+        left: 36px;
+        margin-left: 15px;
+    }
+
+    .item p {
+        color: #000000;
+    }
+}
