@@ -2,20 +2,37 @@
   margin-top: 20px;
 }
 
+.visit-youtube {
+  margin-top: 20px;
+
+  a {
+    font-size: 17px;
+  }
+  img {
+    width: 30px;
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+  }
+}
+
 .carapils {
-  margin-top: 30px;
-  width: 130px;
+  margin-top: 15px;
 
   h4 {
     text-align: center;
     float: right;
     margin-left: 65px;
     font-size: 14px;
+    position: absolute;
   }
 
   img {
     vertical-align: middle;
     width: 30px;
     margin-left: 40px;
+  }
+  .arrow-cara {
+    margin-top: 40px;
   }
 }
