@@ -56,7 +56,8 @@
                             lng: parseFloat(post.custom_fields.lng),
                             pic: post.pic,
                             neighbourhood_id: parseInt(post.taxonomy_neighbourhood[0].id),
-                            type_id: (post['taxonomy_shitty-type'][0] ? parseInt(post['taxonomy_shitty-type'][0].id) : undefined)
+                            type_id: (post['taxonomy_shitty-type'][0] ? parseInt(post['taxonomy_shitty-type'][0].id) : undefined),
+                            type_title: (post['taxonomy_shitty-type'][0] ? post['taxonomy_shitty-type'][0].title : undefined)
                         }
                     });
                     self._neighbourhoods = _.uniq(self._neighbourhoods, function (n) {
