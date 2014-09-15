@@ -9,7 +9,7 @@
         </ion-refresher>
         <ion-list>
             <div ng-repeat="neighborhood in neighborhoods">
-                <div class="item">
+                <div class="item item-text-wrap">
                     <h2 ng-bind-html="neighborhood.title"></h2>
                 </div>
                 <ion-item ng-repeat="place in neighborhood.places"

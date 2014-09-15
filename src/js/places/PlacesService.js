@@ -4,9 +4,7 @@
 
         var self = service;
 
-
         service._places = [];
-
 
         service._maxBounds = {
             'northEast': undefined, // highest
@@ -114,6 +112,14 @@
         };
 
         service.getTypes = function () {
+            self._types.forEach(function(type){
+                type.icon  = {
+                    iconUrl: 'img/icons/type-'+type.id+'.png',
+                    iconSize:     [48, 48],
+                    iconAnchor:   [24, 35]
+                };
+            });
+
             return self._types;
         };
 
