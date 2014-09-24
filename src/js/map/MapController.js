@@ -88,7 +88,12 @@
                         lng: e.longitude,
                         focus: true,
                         clickable: false,
-                        draggable: false
+                        draggable: false,
+                        icon : {
+                            iconUrl: 'img/your-location.png',
+                            iconSize:     [48, 48],
+                            iconAnchor:   [24, 35]
+                        }
                     };
                     $scope.$apply();
                 })
