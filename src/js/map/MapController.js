@@ -6,7 +6,9 @@
 
         $scope.setFilter = function(fil){
             filter = fil;
+            var ownFallBack = $scope.markers['own'];
             $scope.markers = [];
+            $scope.markers['own'] = ownFallBack;
             places.forEach(function (place) {
                 if (!place.lat || !place.lng) return false;
                 if (place.type_id == filter || filter == "all") {
@@ -34,7 +36,7 @@
             },
             //tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
             tileLayer: "https://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png",
-            minZoom: 12
+            minZoom: 10
 
         };
 
