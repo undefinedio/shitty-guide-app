@@ -12,7 +12,7 @@
             <ion-content has-header="true" padding="false" data-tap-disabled="true" scroll="false">
                 <leaflet maxbounds="maxBounds" defaults="defaults" center="center" class="map" height="100%"
                          width="100%" markers="markers"></leaflet>
-                <div class="your-location"><img src="img/your-location.png" alt=""/>Your Location</a></div>
+                <div class="your-location" ng-class="{ enabled : markers['own'] }" ng-click="yourLocation()"><img src="img/your-location.png" alt=""/>Your Location</a></div>
             </ion-content>
         </ion-side-menu-content>
         <!-- Left menu -->

@@ -79,7 +79,15 @@
             $scope.modal.show();
         });
 
+        var tempMap;
+
+        $scope.yourLocation = function(){
+           if(!$scope.markers["own"]) return false;
+            tempMap.panTo([$scope.markers["own"].lat, $scope.markers["own"].lng]);
+        };
+
         leafletData.getMap().then(function (map) {
+            tempMap = map;
             map.invalidateSize();
             map.locate({watch: true})
                 .on('locationfound', function (e) {

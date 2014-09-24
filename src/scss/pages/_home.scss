@@ -7,7 +7,10 @@
     padding: 10px;
     border-radius: 3px;
     color: #0000ff;
-
+    opacity : 0.4;
+    &.enabled{
+      opacity : 1;
+    }
     img {
         width: 28px;
         vertical-align: middle;
