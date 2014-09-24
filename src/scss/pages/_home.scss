@@ -1,0 +1,16 @@
+.your-location {
+    position: absolute;
+    bottom: 24px;
+    display: block;
+    background-color: #fff;
+    right: 11px;
+    padding: 10px;
+    border-radius: 3px;
+    color: #0000ff;
+
+    img {
+        width: 28px;
+        vertical-align: middle;
+        display: inline-block;
+    }
+}

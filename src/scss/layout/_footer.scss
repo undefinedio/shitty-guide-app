@@ -33,6 +33,10 @@
         text-transform: uppercase;
         font-weight: 800;
     }
+    &:hover {
+        color: #444;
+        text-decoration: none;
+    }
 }
 
 .tab-item-active {
@@ -47,12 +51,6 @@
             background: url('../img/line-through.png');
             width: 46px;
             height: 22px;
-        }
-    }
-    &.tab-item {
-        &:hover {
-            color: #444;
-            text-decoration: none;
         }
     }
 }

@@ -12,9 +12,9 @@
             <ion-content has-header="true" padding="false" data-tap-disabled="true" scroll="false">
                 <leaflet maxbounds="maxBounds" defaults="defaults" center="center" class="map" height="100%"
                          width="100%" markers="markers"></leaflet>
+                <div class="your-location"><img src="img/your-location.png" alt=""/>Your Location</a></div>
             </ion-content>
         </ion-side-menu-content>
-
         <!-- Left menu -->
         <ion-side-menu side="left">
             <header class="bar bar-header bar-dark">
@@ -22,10 +22,11 @@
             </header>
             <ion-content has-header="true">
                 <ul class="list filter">
-                    <li  data-click-menulink class="item" ng-click="setFilter('all')" menu-close>
+                    <li data-click-menulink class="item" ng-click="setFilter('all')" menu-close>
                         All
                     </li>
-                    <li ng-repeat="type in types" data-click-menulink class="item" ng-click="setFilter(type.id)" menu-close>
+                    <li ng-repeat="type in types" data-click-menulink class="item" ng-click="setFilter(type.id)"
+                        menu-close>
                         <img src="img/icons/type-{{type.id}}.png" alt=""/>
                         {{type.title}}
                     </li>
