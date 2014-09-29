@@ -35,7 +35,11 @@
                 //maxNativeZoom : 14
             },
             //tileLayer: "http://{s}.tile.osm.org/{z}/{x}/{y}.png",
-            tileLayer: "https://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png",
+            tileLayer: "https://{s}.tiles.mapbox.com/v3/pinterest.ijz1714i/{z}/{x}/{y}.png",
+            //http://b.tiles.mapbox.com/v3/pinterest.ijz1714i/11/1603/1008.png64
+            //tileLayer: "https://{s}.tiles.mapbox.com/v3/foursquare.m3elv7vi/{z}/{x}/{y}.png",
+            //tileLayer: "https://{s}.tiles.mapbox.com/v3/examples.map-i87786ca/{z}/{x}/{y}.png",
+            //https://a.tiles.mapbox.com/v3/foursquare.m3elv7vi/11/1049/683.png
             minZoom: 10
 
         };
